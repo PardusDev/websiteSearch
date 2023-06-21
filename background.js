@@ -1,17 +1,29 @@
-var Items = [
-    {
-        "id": "search-with-epey",
-        "title" : "Epey'de Ara",
-        "type" : "normal",
-        "contexts" : ["selection"],
-    },
-    {
-        "id": "search-with-bokyeme",
-        "title" : "BokYeme'de Ara",
-        "type" : "normal",
-        "contexts" : ["selection"],
-    }
-];
+fetch('https://pardusdev.github.io/extension/contextItems.json')
+    .then(response => response.json())
+    .then(Items  => {
+        Items.forEach(function(Item) {
+            chrome.contextMenus.create(Item);
+        });
+    })
+    .catch(error => {
+        console.error('Error: ', error);
+    });
+
+
+// var Items = [
+//     {
+//         "id": "search-with-epey",
+//         "title" : "Epey'de Ara",
+//         "type" : "normal",
+//         "contexts" : ["selection"],
+//     },
+//     {
+//         "id": "search-with-bokyeme",
+//         "title" : "BokYeme'de Ara",
+//         "type" : "normal",
+//         "contexts" : ["selection"],
+//     }
+// ];
 
 chrome.contextMenus.onClicked.addListener(function(info, tab) {
 	var url = "https://google.com.tr";
@@ -23,6 +35,4 @@ chrome.contextMenus.onClicked.addListener(function(info, tab) {
 	chrome.tabs.create({ url: url, });
 });
 
-Items.forEach(function(Item) {
-    chrome.contextMenus.create(Item);
-});
+
