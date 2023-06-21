@@ -1,0 +1,14 @@
+{
+"manifest_version": 3,
+    "background" : { "service_worker": "background.js" },
+    "description": "Seçilen yazıyı belirli sitelerde aramaya sağlar.",
+    "icons": {
+            "16": "icon16.png",
+            "48": "icon48.png",
+            "128": "icon128.png"
+        },
+   "minimum_chrome_version": "6",
+   "name": "Siteler Üzerinde Arama",
+   "permissions": [ "contextMenus", "tabs" ],
+   "version": "1.0"
+}
