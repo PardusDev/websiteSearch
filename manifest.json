@@ -10,5 +10,6 @@
    "minimum_chrome_version": "6",
    "name": "Siteler Üzerinde Arama",
    "permissions": [ "contextMenus", "tabs" ],
+   "host_permissions": ["<https://pardusdev.github.io/*>"],
    "version": "1.0"
 }

@@ -1,29 +1,15 @@
-fetch('https://pardusdev.github.io/extension/contextItems.json')
-    .then(response => response.json())
-    .then(Items  => {
-        Items.forEach(function(Item) {
-            chrome.contextMenus.create(Item);
-        });
-    })
-    .catch(error => {
-        console.error('Error: ', error);
-    });
-
-
-// var Items = [
-//     {
-//         "id": "search-with-epey",
-//         "title" : "Epey'de Ara",
-//         "type" : "normal",
-//         "contexts" : ["selection"],
-//     },
-//     {
-//         "id": "search-with-bokyeme",
-//         "title" : "BokYeme'de Ara",
-//         "type" : "normal",
-//         "contexts" : ["selection"],
-//     }
-// ];
+chrome.runtime.onInstalled.addListener(function(info, tab) {
+	fetch('https://pardusdev.github.io/extension/contextItems.json')
+		.then(response => response.json())
+		.then(Items  => {
+			Items.forEach(function(Item) {
+				chrome.contextMenus.create(Item);
+			});
+		})
+		.catch(error => {
+			//console.error('Error: ', error);
+		});
+})
 
 chrome.contextMenus.onClicked.addListener(function(info, tab) {
 	var url = "https://google.com.tr";
