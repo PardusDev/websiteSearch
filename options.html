@@ -9,12 +9,17 @@
 </head>
 <body>
     <div class="container">
-        <div class="row">
+        <row>
+            <h1 class="my-2">Website Search</h1>
+        </row>
+        <hr>
+        <div class="row justify-content-between m-3 mt-5">
             <h2>Siteler</h2>
+                <button type="button" class="btn btn-primary px-5">Yeni Ekle</button>
         </div>
-        <div class="row">
+        <div class="row m-3">
             <div class="table-responsive">
-                <table class="table table-striped">
+                <table class="table table-striped" id="websitesTable">
                     <thead>
                         <tr>
                             <th>Adı</th>
@@ -23,23 +28,13 @@
                             <th>Düzenle</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr>
-                            <td>Epey</td>
-                            <td>www.epey.com</td>
-                            <td><i class="bi bi-trash-fill"></i></td>
-                            <td><i class="bi bi-pencil-fill"></i></td>
-                        </tr>
-                        <tr>
-                            <td>BokYeme</td>
-                            <td>www.bokyeme.com</td>
-                            <td><i class="bi bi-trash-fill"></i></td>
-                            <td><i class="bi bi-pencil-fill"></i></td>
-                        </tr>
+                    <tbody id="websitesTableBody">
+
                     </tbody>
                 </table>
             </div>
         </div>
     </div>
 </body>
+<script src="options.js"></script>
 </html>

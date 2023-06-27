@@ -14,11 +14,15 @@ chrome.runtime.onInstalled.addListener(function(info, tab) {
 				}
 				chrome.contextMenus.create(tempItem);
 			});
+			chrome.storage.local.set({ webSites: Items }, function () {});
 		})
 		.catch(error => {
 			//console.error('Error: ', error);
 		});
+
+
 })
+
 
 chrome.contextMenus.onClicked.addListener(function(info, tab) {
 	var url = "https://google.com.tr/search?q=" + info.selectionText + "%20site:"+ getWebsiteAddressById(info.menuItemId);
