@@ -1,6 +1,7 @@
 {
 "manifest_version": 3,
     "background" : { "service_worker": "background.js" },
+    "options_page" : "options.html",
     "description": "Seçilen yazıyı belirli sitelerde aramaya sağlar.",
     "icons": {
             "16": "icon16.png",
