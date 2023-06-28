@@ -17,10 +17,8 @@ chrome.runtime.onInstalled.addListener(function(info, tab) {
 			chrome.storage.local.set({ webSites: Items }, function () {});
 		})
 		.catch(error => {
-			//console.error('Error: ', error);
+			console.error('Error: ', error);
 		});
-
-
 })
 
 
@@ -34,3 +32,9 @@ function getWebsiteAddressById(id) {
 	return Item.websiteAddress;
 }
 
+chrome.runtime.onMessage.addListener(
+	function(request, sender, sendResponse) {
+		sendResponse({status: 'ok'});
+		Items.push(request.newItem);
+	}
+);

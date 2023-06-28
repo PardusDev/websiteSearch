@@ -1,8 +1,8 @@
 let Items;
+var addButton = document.getElementById("addWebSite");
 
 chrome.storage.local.get("webSites", (results) => {
     Items = results.webSites;
-    console.log(Items);
 
     Items.forEach(function(Item) {
         var dom = `
@@ -18,3 +18,7 @@ chrome.storage.local.get("webSites", (results) => {
         table.innerHTML += dom;
     });
 });
+
+addButton.addEventListener("click", function () {
+    location.replace("add_website.html");
+})
