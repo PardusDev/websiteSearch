@@ -2,20 +2,20 @@ var Items;
 var addWebsiteButton = document.getElementById("addNewWebsite");
 
 addWebsiteButton.addEventListener("click", () => {
-    var uniqueID = document.getElementById("InputWebsiteID").value;
-    var contextText = document.getElementById("InputContextText").value;
-    var websiteAddress = document.getElementById("InputWebsiteAddress").value;
+    var uniqueID = document.getElementById("InputWebsiteID");
+    var contextText = document.getElementById("InputContextText");
+    var websiteAddress = document.getElementById("InputWebsiteAddress");
 
 
     chrome.storage.local.get("webSites", (results) => {
         Items = results.webSites;
 
         var willAdd = {
-            "id": uniqueID,
-            "title" : contextText,
+            "id": uniqueID.value,
+            "title" : contextText.value,
             "type" : "normal",
             "contexts" : ["selection"],
-            "websiteAddress" : websiteAddress
+            "websiteAddress" : websiteAddress.value
         };
 
         Items.push(willAdd);
@@ -24,10 +24,11 @@ addWebsiteButton.addEventListener("click", () => {
         chrome.runtime.sendMessage({newItem: willAdd}, function() {});
     });
     var tempItem = {
-        id: uniqueID,
-        title: contextText,
+        id: uniqueID.value,
+        title: contextText.value,
         type: "normal",
         contexts: ["selection"]
     }
+
     chrome.contextMenus.create(tempItem);
 });

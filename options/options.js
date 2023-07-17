@@ -9,8 +9,8 @@ chrome.storage.local.get("webSites", (results) => {
             <tr id="${Item.id}">
                 <td>${Item.title}</td>
                 <td>${Item.websiteAddress}</td>
-                <td><i class="bi bi-trash-fill"></i></td>
-                <td><i class="bi bi-pencil-fill"></i></td>
+                <td><a href="#" id="deleteButton"><i class="bi bi-trash-fill"></i></a></td>
+                <td><a href="edit_website.html?id=${Item.id}" id="editButton"><i class="bi bi-pencil-fill"></i></a><td>
             </tr>
         `
         const table = document.getElementById("websitesTableBody");
