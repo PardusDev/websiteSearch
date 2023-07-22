@@ -44,6 +44,14 @@ chrome.runtime.onMessage.addListener(
 			});
 		} else if (request.type === "add") {
 			Items.push(request.newItem);
+		} else if (request.type === "delete") {
+			Items.forEach(function(Item) {
+				if (Item.id === request.id.id) {
+					var index = Items.indexOf(Item);
+					Items.slice(index, 1);
+					return;
+				}
+			});
 		}
 		sendResponse({status: 'ok'});
 	}
