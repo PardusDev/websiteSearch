@@ -17,7 +17,9 @@ chrome.storage.local.get("webSites", (results) => {
 
         table.innerHTML += dom;
     });
+    console.log(Items);
 });
+
 
 addButton.addEventListener("click", function () {
     location.replace("add_website.html");

@@ -28,9 +28,11 @@ deleteWebsiteButton.addEventListener("click", () => {
         Items.forEach(function(Item) {
             if (Item.id===id) {
                 var index = Items.indexOf(Item);
-                Items.slice(index, 1);
+                console.log(index);
+                Items.splice(index, 1);
 
                 chrome.storage.local.set({ webSites: Items }, function () {});
+                console.log(Items);
 
                 chrome.runtime.sendMessage({type: "delete", id: id}, function() {});
 
@@ -42,3 +44,7 @@ deleteWebsiteButton.addEventListener("click", () => {
         });
     });
 });
+
+cancelButton.addEventListener("click", () => {
+    location.replace("options.html");
+})

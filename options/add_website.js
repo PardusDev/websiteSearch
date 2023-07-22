@@ -31,4 +31,6 @@ addWebsiteButton.addEventListener("click", () => {
     }
 
     chrome.contextMenus.create(tempItem);
+
+    location.replace("options.html");
 });
