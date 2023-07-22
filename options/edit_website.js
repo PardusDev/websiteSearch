@@ -1,5 +1,6 @@
 var Items;
 var saveWebsiteButton = document.getElementById("saveWebsite");
+var cancelButton = document.getElementById("cancelButton");
 var uniqueID = document.getElementById("InputWebsiteID");
 var contextText = document.getElementById("InputContextText");
 var websiteAddress = document.getElementById("InputWebsiteAddress");
@@ -49,3 +50,7 @@ saveWebsiteButton.addEventListener("click", () => {
         });
     });
 });
+
+cancelButton.addEventListener("click", () => {
+    location.replace("options.html");
+})
