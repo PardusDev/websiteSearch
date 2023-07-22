@@ -21,7 +21,7 @@ addWebsiteButton.addEventListener("click", () => {
         Items.push(willAdd);
         chrome.storage.local.set({ webSites: Items }, function () {});
 
-        chrome.runtime.sendMessage({newItem: willAdd}, function() {});
+        chrome.runtime.sendMessage({type: "add",newItem: willAdd}, function() {});
     });
     var tempItem = {
         id: uniqueID.value,

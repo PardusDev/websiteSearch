@@ -34,7 +34,17 @@ function getWebsiteAddressById(id) {
 
 chrome.runtime.onMessage.addListener(
 	function(request, sender, sendResponse) {
+		if(request.type === "update") {
+			Items.forEach(function(Item) {
+				if (Item.id === request.newItem.id) {
+					Item.title = request.newItem.title;
+					Item.websiteAddress = request.newItem.websiteAddress;
+					return;
+				}
+			});
+		} else if (request.type === "add") {
+			Items.push(request.newItem);
+		}
 		sendResponse({status: 'ok'});
-		Items.push(request.newItem);
 	}
 );

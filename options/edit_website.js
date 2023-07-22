@@ -28,11 +28,15 @@ saveWebsiteButton.addEventListener("click", () => {
             if (Item.id===id) {
                 Item.title = contextText.value;
                 Item.websiteAddress = websiteAddress.value;
+                var willAdd = {
+                    "id" : id,
+                    "title" : contextText.value,
+                    "websiteAddress" : websiteAddress.value
+                };
 
                 chrome.storage.local.set({ webSites: Items }, function () {});
 
-                // TODO: We need to change the websiteAddress in the Items variable in the background.js file.
-                chrome.runtime.sendMessage({newItem: willAdd}, function() {});
+                chrome.runtime.sendMessage({type: "update", newItem: willAdd}, function() {});
 
                 chrome.contextMenus.update(
                     Item.id,
