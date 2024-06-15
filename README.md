@@ -14,3 +14,12 @@ Remember! If you extracted the archive to a folder, you need to select the folde
 
 ## Usage
 Select a word on your page, right-click, and choose the new item that comes with the extension. This way, you will be able to access the default websites. If you want to add your own website, you can go to the extension settings from the extensions page and add your own site.
+
+## Screenshots from the Extension 
+Screenshot from the usage moment.
+<img src="/screenshots/selected_word.png" alt="Screenshot from App" width="900" />
+
+<br><br><br><br>
+
+Screenshot from the settings screen.
+<img src="/screenshots/settings_page.png" alt="Screenshot from App" width="900" />
