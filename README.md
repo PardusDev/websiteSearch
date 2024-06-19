@@ -23,3 +23,10 @@ Screenshot from the usage moment.
 
 Screenshot from the settings screen.
 <img src="/screenshots/settings_page.png" alt="Screenshot from App" width="900" />
+
+## Contact
+
+You can reach me at:
+
+- **Email:** [rustemavci@hotmail.com.tr](mailto:rustemavci@hotmail.com.tr)
+- **LinkedIn:** [LinkedIn](https://www.linkedin.com/in/rüstem-avcı)
